@@ -2,6 +2,7 @@ from django.db import models
 from project.models import Category, Tag
 from user.models import User
 
+
 class Book(models.Model):
     book_name = models.CharField(
         max_length=255, 
@@ -15,26 +16,22 @@ class Book(models.Model):
         related_name='book_category',
         verbose_name='Категория'
         )
-    authors = models.ForeignKey(
+    author = models.ForeignKey(
         User, 
         on_delete=models.CASCADE,
-        related_name='authors',
-        verbose_name='Авторы'
+        related_name='author',
+        verbose_name='Автор'
         )
-    # author = models.ForeignKey(
-    #     User, 
-    #     on_delete=models.CASCADE,
-    #     related_name='author',
-    #     verbose_name='Автор Книги'
-    #     )
 
     books_tag = models.ManyToManyField(
         Tag,
-        related_name='tags'
+        related_name='tags',
+        verbose_name='Тэги'
         )
+
     
     def __str__(self):
-        return f"{self.book_name} - {self.authors}"
+        return f"{self.book_name} - {self.author}"
 
     class Meta:
         verbose_name = 'Книга'

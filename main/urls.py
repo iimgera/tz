@@ -35,7 +35,9 @@ schema_view = get_schema_view(
 
 api_v1_patterns = [
     path('_tags/', include('project.urls')),
-    path('_books/', include('book.urls'))
+    path('_books/', include('book.urls')),
+    path('_authors/', include('user.urls'))
+
 ]
 
 urlpatterns = [

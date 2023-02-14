@@ -9,13 +9,13 @@ class User(models.Model):
         blank=True, 
         null=True,
         verbose_name='Автор'
-        ),
-    books = models.ForeignKey(
-        'book.Book',
-        on_delete=models.CASCADE,
-        verbose_name='Категория',
-        related_name='books' 
         )
+    # books = models.ForeignKey(
+    #     'book.Book',
+    #     on_delete=models.CASCADE,
+    #     verbose_name='Категория',
+    #     related_name='books' 
+    #     )
         
 
     def __str__(self):

@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' "/home/user/Рабочий стол/tz/venv/bin/python" "$0" "$@"
-' '''
+#!/home/user/tz/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
