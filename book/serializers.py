@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Book
+from .models import Book, Country
 
 
 class BookSerializer(serializers.ModelSerializer):
@@ -11,4 +11,12 @@ class BookSerializer(serializers.ModelSerializer):
                   'category',
                   'author',
                   'books_tag'
+                  )
+
+
+class Countryializer(serializers.ModelSerializer):
+    class Meta:
+        model = Country
+        fields = (
+                  'name'
                   )

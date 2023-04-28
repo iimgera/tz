@@ -2,6 +2,12 @@ from django.db import models
 from project.models import Category, Tag
 from user.models import User
 
+class Country(models.Model):
+    name = models.CharField(max_length=100)
+     
+    def __str__(self):
+        return self.name
+
 
 class Book(models.Model):
     book_name = models.CharField(
